@@ -1,0 +1,4 @@
+metric,responses,mean_hours,median_hours,maximum_hours
+Overall,36,10.79,8.35,31.00
+Open,7,24.36,24.00,31.00
+Resolved,29,7.51,7.00,16.00

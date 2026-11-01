@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sample-001",
+    "category": "Books",
+    "description": "Blue notebook left on a front-row desk. Dummy sample notice.",
+    "location_zone": "Workshop Hall",
+    "item_date": "2026-10-30",
+    "contact_preference": "Campus desk",
+    "contact_details": "Campus desk extension 0000 (dummy)",
+    "created_at": "2026-10-30T10:00:00+00:00",
+    "resolved": false
+  },
+  {
+    "id": "sample-002",
+    "category": "Keys",
+    "description": "Single key with a red tag found near the library entrance. Dummy sample notice.",
+    "location_zone": "Library",
+    "item_date": "2026-10-31",
+    "contact_preference": "Email",
+    "contact_details": "workshop@example.invalid (dummy)",
+    "created_at": "2026-10-31T08:30:00+00:00",
+    "resolved": true
+  }
+]

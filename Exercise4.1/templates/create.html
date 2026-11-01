@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Post a notice · Campus Lost &amp; Found{% endblock %}
+{% block content %}
+<a class="back-link" href="{{ url_for('index') }}">← All notices</a><section class="form-panel"><p class="eyebrow">SHARE A NOTICE</p><h1>Post a lost or found item</h1><p class="hint">Use dummy contact details only. This workshop app is intended for localhost.</p>
+<form method="post" action="{{ url_for('create_notice') }}" novalidate>
+  <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+  <input type="hidden" name="submission_token" value="{{ session.submission_token }}">
+  <label for="category">Item category <span class="required">*</span></label><select id="category" name="category" required><option value="">Choose a category</option>{% for item in categories %}<option value="{{ item }}" {% if form.get('category') == item %}selected{% endif %}>{{ item }}</option>{% endfor %}</select>{% if errors.get('category') %}<span class="error">{{ errors.category }}</span>{% endif %}
+  <label for="description">Description <span class="required">*</span></label><textarea id="description" name="description" rows="4" maxlength="500" required>{{ form.get('description', '') }}</textarea><span class="hint">Maximum 500 characters.</span>{% if errors.get('description') %}<span class="error">{{ errors.description }}</span>{% endif %}
+  <div class="form-row"><div><label for="location_zone">Location zone <span class="required">*</span></label><select id="location_zone" name="location_zone" required><option value="">Choose a zone</option>{% for item in zones %}<option value="{{ item }}" {% if form.get('location_zone') == item %}selected{% endif %}>{{ item }}</option>{% endfor %}</select>{% if errors.get('location_zone') %}<span class="error">{{ errors.location_zone }}</span>{% endif %}</div><div><label for="item_date">Date found/lost <span class="required">*</span></label><input id="item_date" type="date" name="item_date" max="{{ today }}" value="{{ form.get('item_date', '') }}" required>{% if errors.get('item_date') %}<span class="error">{{ errors.item_date }}</span>{% endif %}</div></div>
+  <label for="contact_preference">Contact preference <span class="required">*</span></label><select id="contact_preference" name="contact_preference" required><option value="">Choose a preference</option>{% for item in contact_preferences %}<option value="{{ item }}" {% if form.get('contact_preference') == item %}selected{% endif %}>{{ item }}</option>{% endfor %}</select>{% if errors.get('contact_preference') %}<span class="error">{{ errors.contact_preference }}</span>{% endif %}
+  <label for="contact_details">Dummy contact detail <span class="hint">optional</span></label><input id="contact_details" name="contact_details" maxlength="120" value="{{ form.get('contact_details', '') }}" placeholder="e.g. workshop@example.invalid"><span class="hint">Do not enter real phone numbers, email addresses, or personal information.</span>{% if errors.get('contact_details') %}<span class="error">{{ errors.contact_details }}</span>{% endif %}
+  <button type="submit">Post notice</button>
+</form></section>
+{% endblock %}
