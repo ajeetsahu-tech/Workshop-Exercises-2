@@ -1,0 +1,17 @@
+session,rating,topic_category,comment
+Session 1 - Python Basics,5,Programming,"Clear examples and a helpful pace."
+Session 1 - Python Basics,4,Programming,"The practice exercise was useful."
+Session 1 - Python Basics,4,Tools,
+Session 1 - Python Basics,3,Programming,"Would like a little more time for questions."
+Session 2 - Data Analysis,4,Data,
+Session 2 - Data Analysis,3,Data,"Good overview; charts could use another example."
+Session 2 - Data Analysis,2,Tools,"The setup instructions were hard to follow."
+Session 2 - Data Analysis,4,Data,"Useful hands-on activity."
+Session 3 - Web Apps,5,Web Development,"Enjoyed building the small app."
+Session 3 - Web Apps,4,Web Development,
+Session 3 - Web Apps,2,Tools,"Environment setup took too long."
+Session 3 - Web Apps,3,Web Development,"More time for debugging would help."
+Session 4 - Security,2,Security,"The session moved quickly for beginners."
+Session 4 - Security,3,Security,
+Session 4 - Security,2,Security,"A longer practical demonstration would help."
+Session 4 - Security,4,Security,"Strong examples and discussion."
