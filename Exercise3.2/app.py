@@ -64,13 +64,13 @@ else:
     if low_rated.empty:
         st.success("No session averages below 3.0 in the filtered records.")
     else:
-        st.dataframe(low_rated.style.format({"mean_rating": "{:.2f}"}), use_container_width=True)
+        st.dataframe(low_rated.style.format({"mean_rating": "{:.2f}"}), width="stretch")
 
 st.subheader("Filtered feedback")
 st.caption(f"Showing {len(filtered)} of {len(feedback)} valid responses.")
 show_comments = st.checkbox("Show optional comments", value=True)
 display_columns = ["session", "rating", "topic_category"] + (["comment"] if show_comments else [])
-st.dataframe(filtered[display_columns], hide_index=True, use_container_width=True)
+st.dataframe(filtered[display_columns], hide_index=True, width="stretch")
 if show_comments:
     # Render comments as escaped plain text; never interpret uploaded text as HTML.
     comments = [escape(str(value)) for value in filtered["comment"] if str(value).strip()]
